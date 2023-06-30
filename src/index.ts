@@ -53,15 +53,26 @@ function addListItem(task: Task): boolean {
     const item = document.createElement("li");
     const label = document.createElement("label");
     const checkbox = document.createElement("input");
+    const deletButton = document.createElement("button");
+    deletButton.innerHTML = "DELETE";
     checkbox.addEventListener("change", () => {
       task.completed = checkbox.checked;
       saveTasks();
     });
+    deletButton.addEventListener("click", () => {
+      const index = tasks.indexOf(task);
+      if (index > -1) {
+        tasks.splice(index, 1);
+      }
+      saveTasks();
+      list.removeChild(item);
+    });
     checkbox.type = "checkbox";
     checkbox.checked = task.completed;
-    label.append(checkbox, task.title);
+    label.append(checkbox, task.title, deletButton);
     item.append(label);
     list.append(item);
+    saveTasks();
     return true;
   } else {
     alert("Error 100: Cannot Get List from HTML!");
