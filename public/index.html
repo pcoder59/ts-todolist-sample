@@ -8,11 +8,21 @@
     <link rel="stylesheet" href="index.css" type="text/css">
 </head>
 <body>
-    <ul id="list"></ul>
-    <form id="new-task-form">
-        <input type="text" id="new-task-title">
+    <form id="add-list-form">
+        <input type="text" id="new-list-title">
         <button type="submit">Add</button>
     </form>
+    <div id="lists">
+        <div id="new-list-container">
+            <h2>List Name</h2>
+            <button type="button">DELETE</button>
+            <ul id="list"></ul>
+            <form id="new-task-form">
+                <input type="text" id="new-task-title">
+                <button type="submit">Add</button>
+            </form>
+        </div>
+    </div>
     <script src="dist/index.js" type="module"></script>
 </body>
 </html>
