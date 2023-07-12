@@ -82,12 +82,17 @@ function addNewList(list: List): boolean {
     const newListContainer = document.createElement("div");
     const newList = document.createElement("ul");
     const label = document.createElement("h2");
+    const input = document.createElement("input");
+    const add = document.createElement("button");
+    add.innerHTML = "Add";
     const deletButton = document.createElement("button");
     deletButton.innerHTML = "DELETE";
     label.innerHTML = list.title;
     newListContainer.append(label);
     newListContainer.append(deletButton);
     newListContainer.append(newList);
+    newListContainer.append(input);
+    newListContainer.append(add);
     lists.append(newListContainer);
     return true;
   } else {
